@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="open">새창</button>
+	<button id="prompt">질문</button>
+	<button id="ci">주기 작업 중지</button>
+	<span id="msg"></span>
+	<button id="st">5초 후...</button>
+	<button id="ct">그만!</button>
+</body>
+<script>
+	let timeoutId;	
+	document.querySelector("#st").addEventListener("click",function(){
+		timeoutId = window.setTimeout(function(){
+			alert("bang!!");
+		},1000*5);
+	});	
+	document.querySelector("#ct").addEventListener("click",function(){
+		window.clearTimeout(timeoutId);
+	});
+	let message = ["Morning","Afternoon","Evening"];
+	let intervalId = setInterval(function(){
+		let num = Math.floor(Math.random()*3);	//0<=x<=2
+		document.querySelector("#msg").innerHTML = message[num];				
+	},1000*1);
+	document.querySelector("#ci").addEventListener("click",function(){
+		window.clearInterval(intervalId);
+	});	
+	document.querySelector("#open").addEventListener("click", function(){
+		window.open("http://www.naver.com","child","width=400px, height=300");
+	});
+	document.querySelector("#open").addEventListener("click", function(){
+		let p = prompt("질문...", "기본 답");
+		console.log(p);
+	});
+	
+	
+</script>
+</html>

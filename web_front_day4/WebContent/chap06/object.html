@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+	let person ={
+		name : "홍길동",
+		age : 20,
+		hobbys:["잠자기","독서","영화"],
+		printInfo: function(){
+			return this.name+", "+this.age;
+		}		
+	};
+	console.log(person,typeof person);
+	//person이 가지고 있는 모든 hobby를 순서대로 출력
+	for(let i of person.hobbys){
+		console.log(i);
+	}
+	console.log(person.printInfo());
+	//반복문을 이용한 객체의 속성 탐색
+	for(let key in person){
+		console.log(key+" : "+person[key]);
+	}
+// 	console.log(alert)
+// 	console.log(window.alert)
+// 	for(let key in window){
+// 		console.log(key + " : "+ window[key])
+// 	}
+	let student={
+			name:"홍길동"
+	};
+	console.log("초기 : ", student);
+	student.age = 30;	//동적인 속성 추가
+	delete student.name; //동적인 속성삭제
+	console.log("변경 후 : ", student)
+	
+	console.log(person);
+	let strPerson = JSON.stringify(person);
+	console.log(strPerson);
+	let reObj = JSON.parse(strPerson);
+	console.log(reObj);
+</script>
+</html>

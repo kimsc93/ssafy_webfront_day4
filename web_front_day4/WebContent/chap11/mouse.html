@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:200px;
+		height:200px;
+		background:aqua;
+	}
+</style>
+</head>
+<body>
+	<div>
+	</div>
+</body>
+<script>
+	document.querySelector("div").addEventListener("mouseenter",function(e){
+		console.log("screen ",e.screenX,e.screenY);
+		console.log("page ",e.pageX,e.pageY);
+		console.log("client ",e.clientX,e.clientY);	
+	});
+	
+	let a = true || false;
+	console.log(a);
+	let b = ""||false;
+	console.log(b);
+	let c;	
+	//javascript의 ||는 마지막으로 실행한 '값'이 할당
+	let d = c||"Hello";
+	console.log(d);
+	console.log(alert);
+	let myalert = superAlert || alert;	//javascript에서 cross browsing 처리
+</script>
+</html>

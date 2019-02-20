@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+	function myFunc(name){
+		for(let i in arguments){
+			console.log(i,arguments[i]);
+		}
+		return "Hello " +name;
+	}
+	//함수 호출
+	console.log(myFunc("홍길동"));
+	console.log(myFunc());
+	console.log(myFunc("홍길동",30));
+	
+	//몇 개의 숫자가 들어오더라도 다 더할 수 있는 함수를 만들어보자
+	function add(){
+		let sum = 0;
+		for(let i in arguments){
+			sum += arguments[i];
+		}
+		return sum;
+	}
+	console.log(add(1,2,3,4,5,6,7,8,9));
+	
+	let array = [10,8,8,90,20,7,31];
+	array.sort();
+	console.log("기본 정렬 : "+array)
+	
+	function myComp(a,b){
+		return a-b;
+	}
+	array.sort(myComp);
+	console.log("숫자 정렬 : " +array);
+	
+	array.sort(function(a,b){	//이렇게 호출되는 함수를 callback함수라고 한다
+		return a-b;
+	});
+	
+	let data = "console.log(10+20)";
+	console.log(data);
+	eval(data);	//절대 실무에서 사용하면 안되는 함수
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+	let a = "123";
+	let b = "456";
+	console.log(a+b);		//+는 결합, 나머지는 숫자로 변환후 연산
+	console.log(parseInt(a)+parseInt(b));
+	console.log(a-b);
+	let c = "456cm";
+	console.log(a+c);
+	console.log(a-c);
+	console.log(a-parseInt(c));	//숫자영역까지 계산
+	
+	
+	//boolean에서의 형 변환
+	//javascript에서 boolean이 false로 평가되는 경우:
+		// '',0,null,undefined,NaN,false
+	let name="";
+	console.log(name.length)
+	if(name.length==0){
+		console.log("이름을 입력하세요.");
+	}
+	if(!name){
+		console.log("이름을 입력하세요.");
+	}
+	if(1==true){
+		console.log("같아..==");
+	}
+	if(1===true){
+		console.log("같아..==");
+	}
+	
+</script>
+</html>

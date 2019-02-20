@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//DOM 관리 객체 : document
+	window.onload = function(){
+		let header = document.getElementById("header");
+		console.log(header);		
+	}	
+</script>
+</head>
+<body>
+	<h1 id="header">Header</h1>
+	<ul>
+		<li>first
+		<li>second
+	</ul>
+	<input type="text" id="id" value="홍길동">
+</body>
+<script>
+	let h1 = document.querySelector("#header");
+	console.log(h1);
+	
+	let h2 = document.createElement("h2");
+	let h2content = document.createTextNode("h2의 content");
+	
+	h2.appendChild(h2content);
+	document.querySelector("body").appendChild(h2);
+
+	console.log(document.querySelector("ul").innerHTML)	//조회
+	document.querySelector("ul").innerHTML+="<li>third";
+	console.log(document.querySelector("#id").value)
+	document.querySelector("#id").value ="장길산";
+	let list = document.getElementsByTagName("li");
+	//모든 li들의 내용
+	for(let i of list){
+		console.log(i.innerHTML);
+	}
+	//속성도 나옴
+	for(let key in list){
+		console.log(key+" : "+list[key].innerHTML);
+	}
+	console.log(document.querySelector("ul>li:nth-child(2)").innerHTML);	
+	
+	document.querySelector("#header").style.color ="red";
+	document.querySelector("#header").style.textDecoration="underline";
+</script>
+</html>

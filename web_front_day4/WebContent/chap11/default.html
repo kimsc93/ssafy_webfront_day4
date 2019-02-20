@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#outer{
+		width:200px;
+		height:200px;
+		background:blue;
+	}
+	#inner{
+		width:100px;
+		height:100px;
+		background:yellow;
+	}
+</style>
+</head>
+<body>
+	<div id="outer">
+		<div id="inner">
+			<a href = "http://www.naver.com">naver</a>
+		</div>
+	</div>
+</body>
+<script>
+	document.querySelector("#outer").addEventListener("click",function(){
+		console.log("outer");
+	});
+	document.querySelector("#inner").addEventListener("click",function(e){
+		//이벤트 처리 완료되었으므로 전파 중지!
+		e.stopPropagation();
+		console.log("inner");
+	});
+	document.querySelector("a").addEventListener("click",function(e){
+		e.stopPropagation();
+		//기본 이벤트 동작 중지.
+		e.preventDefault();
+		console.log("a");
+	});
+</script>
+</html>

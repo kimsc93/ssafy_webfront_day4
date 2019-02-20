@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 onclick="event1('홍길동')">first</h1>
+	<h1 id="s">second</h1>
+	<h1 id="t">third</h1>
+</body>
+<script>
+	function event1(name){
+		alert("Hello "+name);
+	}
+	let s = document.querySelector("#s");
+	s.onclick = function(){
+		alert("이것은 두번째..");
+	}
+	document.querySelector("#t").addEventListener("click",function(){
+		//alert("이것은 세번째..");
+		alert(this.innerHTML);
+	});
+</script>
+</html>
